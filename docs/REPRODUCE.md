@@ -6,9 +6,10 @@
   [`DATASETS.md`](DATASETS.md)).
 - **Leave-one-domain-out (LODO):** for each target domain, train on the other
   three; repeat for every domain.
-- **Seeds:** 0, 1, 2, 3, 4 (5 seeds). Main comparison = 4 datasets × 4 domains
-  × 5 seeds × 2 methods (CIFA, SWAD control) = 160 runs; ERM controls add 80;
-  the PACS ablation adds 100.
+- **Seeds:** 0–4 (5 seeds) for most benchmarks; the PACS CIFA/SWAD arms use
+  0–9 (10 seeds). Main comparison = (3 datasets × 4 domains × 5 seeds + PACS
+  4 domains × 10 seeds) × 2 methods = 200 runs; ERM controls add 80; the PACS
+  ablation adds 100.
 - **Backbone:** ResNet-50, ImageNet-pretrained; pretrained BatchNorm kept in
   eval mode (`freeze_bn`), following DomainBed.
 - **Model selection:** source-domain 20% hold-out only (SWAD's LossValley). The
@@ -103,10 +104,10 @@ stable, while individual cells vary with scheduling and library versions.
 
   CIFA and SWAD timings are within run-to-run noise of each other. The PACS
   ablation variants run ~7:52 each, except `noswad` (~6:02).
-- Total work is 340 runs (160 main + 80 ERM + 100 ablation), about 51 GPU-hours
-  (~25 h on two RTX 4090 GPUs). A reviewer mainly interested in the claims can
-  reproduce a single dataset × method (20 runs) or reduce seeds (`"0 1"`) for a
-  fast check.
+- Total work is 380 runs (200 main + 80 ERM + 100 ablation), about 56 GPU-hours
+  (~28 h on two RTX 4090 GPUs). A reviewer mainly interested in the claims can
+  reproduce a single dataset × method (20 runs; 40 for PACS) or reduce seeds
+  (`"0 1"`) for a fast check.
 
 ## Pre-submission / reproduction checklist
 

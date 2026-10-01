@@ -28,7 +28,7 @@ sweep with one command.
 # 1. install
 pip install -r requirements.txt
 
-# 2. recompute ALL reported tables from the 340 raw run files -> results/tables/*.md
+# 2. recompute ALL reported tables from the 380 raw run files -> results/tables/*.md
 python scripts/collect_tables.py --root results
 
 # 3. correctness test of the augmentation, EMA baseline, gradients and SWAD
@@ -45,7 +45,7 @@ Point `DATA_DIR` at each benchmark (see [`docs/DATASETS.md`](docs/DATASETS.md)
 for the required ImageFolder layout), then either run everything or one piece:
 
 ```bash
-# all four benchmarks, SWAD control + CIFA, 4 domains x 5 seeds each
+# all four benchmarks, SWAD control + CIFA; 5 seeds for most benchmarks, 10 for PACS
 DATA_DIR_pacs=/data/PACS DATA_DIR_vlcs=/data/VLCS \
 DATA_DIR_officehome=/data/OfficeHome DATA_DIR_terra=/data/terra_imagefolder \
 bash scripts/reproduce_main.sh
@@ -58,8 +58,8 @@ DATA_DIR=/data/PACS bash scripts/run_sweep.sh pacs cifa "0 1 2 3 4"
 ```
 
 **Runtime.** On a single RTX 4090 one run (5000 steps) takes roughly 7 min
-(PACS/VLCS), 14–15 min (Terra), or 16 min (OfficeHome); the full 340-run sweep
-is about 51 GPU-hours (~25 h on two GPUs). See
+(PACS/VLCS), 14–15 min (Terra), or 16 min (OfficeHome); the full 380-run sweep
+is about 56 GPU-hours (~28 h on two GPUs). See
 [`docs/REPRODUCE.md`](docs/REPRODUCE.md).
 
 Re-runs are written to `reproduce_output/` (git-ignored) and never overwrite
@@ -74,11 +74,11 @@ python scripts/collect_tables.py --root results --compare-root reproduce_output
 ## 3. Main results
 
 Overall accuracy (%), DomainBed leave-one-domain-out, ResNet-50, 5 seeds
-(mean±std, sample std ddof=1):
+(10 for the PACS CIFA/SWAD arms; mean±std, sample std ddof=1):
 
 | Dataset | ERM | SWAD | CIFA | Δ (CIFA−SWAD) | positive cells | worst-domain Δ |
 |---|---|---|---|---|---|---|
-| PACS | 84.38±1.27 | 87.13±0.46 | **88.30±0.28** | +1.17 | 15/20 | **+3.71 (5/5)** |
+| PACS | 84.38±1.27 | 87.30±0.51 | **88.29±0.58** | +0.99 | 27/40 | **+3.14 (9/10)** |
 | VLCS | 76.04±0.91 | 79.03±0.58 | **79.29±0.73** | +0.26 | 11/20 | **+0.59 (4/5)** |
 | OfficeHome | 67.30±0.13 | 71.41±0.56 | 71.45±0.79 | +0.04 | 11/20 | +0.08 (3/5) |
 | TerraIncognita | 49.10±1.82 | 49.96±2.08 | **50.96±1.57** | +1.00 | 13/20 | **+1.85 (4/5)** |
@@ -147,7 +147,7 @@ CIFA-Repro/
 │   ├── collect_tables.py    # raw JSON -> Markdown tables (audit tool)
 │   ├── gen_configs.py       # regenerate configs from code defaults
 │   └── prepare_terra.py     # raw Terra release -> ImageFolder
-├── results/              # paper's reported runs (340 JSON) + tables/
+├── results/              # paper's reported runs (380 JSON) + tables/
 ├── docs/                 # SETUP, DATASETS, REPRODUCE, CLAIMS
 ├── requirements.txt
 ├── CITATION.cff

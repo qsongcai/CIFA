@@ -8,7 +8,7 @@ without re-running anything.
 
 ```
 results/
-├── pacs/{cifa,swad}/        # 20 JSON each (4 domains x 5 seeds)
+├── pacs/{cifa,swad}/        # 40 JSON each (4 domains x 10 seeds)
 ├── vlcs/{cifa,swad}/
 ├── officehome/{cifa,swad}/
 ├── terra/{cifa,swad}/
@@ -18,10 +18,14 @@ results/
     ├── main_results.md          # regenerated from the run files
     ├── ablation_results.md
     ├── summary_*.json           # machine-readable per-dataset summaries
-    └── three_arm_recomputed.json
+    ├── three_arm_recomputed.json
+    └── paired_stats.json        # paired t/Wilcoxon/sign tests (PACS n=10)
 ```
 
-Total: 340 per-run JSON files (160 main CIFA/SWAD + 80 ERM + 100 ablation).
+The per-domain paired-delta figure (Fig. 1) lives in the top-level `figures/`
+directory (`fig_pairwise_delta.pdf/.png`).
+
+Total: 380 per-run JSON files (200 main CIFA/SWAD + 80 ERM + 100 ablation).
 
 ## Regenerate the tables
 

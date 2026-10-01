@@ -29,7 +29,8 @@ the results in that light.
 
 - **Not a uniform large win over SWAD.** On average CIFA *matches* SWAD. The
   consistent empirical effect is a **small gain on the worst domain** of PACS
-  (+3.71), VLCS (+0.59) and Terra (+1.85). These are not large improvements.
+  (+3.14 on Sketch), VLCS (+0.59) and Terra (+1.85). These are not large
+  improvements.
 - **OfficeHome is a null result.** Δ≈+0.04 overall with 11/20 positive cells;
   we report it as no measurable gain, not as a success.
 - **Not causal effect recovery.** Unlike instrumental-variable / anchor
@@ -55,7 +56,8 @@ the results in that light.
 
 ## Known limitations
 
-- Evidence is from four DomainBed benchmarks, five seeds each; larger shifts and
+- Evidence is from four DomainBed benchmarks (five seeds each, ten for PACS);
+  larger shifts and
   more heterogeneous datasets are not covered (a DomainNet pilot was negative
   and is not included).
 - Hyperparameters and the layer choice follow DomainBed/SWAD conventions; the
