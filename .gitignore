@@ -1,0 +1,25 @@
+# Re-runs produced by the scripts (the paper's reported results/ stay tracked)
+reproduce_output/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# Environments
+.venv/
+venv/
+env/
+
+# Caches / weights
+.torch/
+*.pth
+*.pt
+!results/**/*.json
+
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/

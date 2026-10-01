@@ -1,0 +1,14 @@
+# Reference conda environment for CIFA.
+# CPU (audit / smoke test):   conda env create -f environment.yml
+# For GPU, replace the torch/torchvision lines with the CUDA build matching
+# your driver; see https://pytorch.org/get-started/previous-versions/.
+name: cifa
+dependencies:
+  - python=3.10
+  - numpy>=1.24
+  - pillow>=9.0
+  - pyyaml>=6.0
+  - pip
+  - pip:
+      - torch>=2.0
+      - torchvision>=0.15

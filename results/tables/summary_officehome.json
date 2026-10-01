@@ -1,0 +1,130 @@
+{
+  "dataset": "officehome",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "summary": {
+    "Art": {
+      "swad_mean": 68.99876390605688,
+      "swad_std": 0.6400426057095543,
+      "cifa_mean": 69.2377420683972,
+      "cifa_std": 1.2758341902598516,
+      "delta_mean": 0.23897816234033087,
+      "delta_std": 1.2088046588605412,
+      "pos_seeds": 3,
+      "deltas": [
+        -1.153687680263701,
+        0.2884219200659146,
+        0.20601565718993697,
+        -0.2884219200659288,
+        2.1425628347754326
+      ]
+    },
+    "Clipart": {
+      "swad_mean": 54.95990836197022,
+      "swad_std": 1.3257856857942978,
+      "cifa_mean": 55.03780068728522,
+      "cifa_std": 1.0373479614037302,
+      "delta_mean": 0.07789232531500545,
+      "delta_std": 0.5587290238357446,
+      "pos_seeds": 3,
+      "deltas": [
+        -0.5040091638029764,
+        0.4123711340206171,
+        -0.5040091638029764,
+        0.7331042382588748,
+        0.2520045819014882
+      ]
+    },
+    "Product": {
+      "swad_mean": 80.0045055192611,
+      "swad_std": 0.4590878726661073,
+      "cifa_mean": 79.99549448073891,
+      "cifa_std": 0.9874953275198803,
+      "delta_mean": -0.009011038522191938,
+      "delta_std": 0.7565382667004154,
+      "pos_seeds": 3,
+      "deltas": [
+        0.9686866411353918,
+        -1.058797026357297,
+        0.04505519261094548,
+        -0.33791394458211244,
+        0.33791394458211244
+      ]
+    },
+    "Real World": {
+      "swad_mean": 81.68005508377323,
+      "swad_std": 0.3983271636431784,
+      "cifa_mean": 81.533165021804,
+      "cifa_std": 0.5870848863151438,
+      "delta_mean": -0.1468900619692448,
+      "delta_std": 0.34297052765697733,
+      "pos_seeds": 2,
+      "deltas": [
+        -0.5967408767500615,
+        0.022951572182691393,
+        0.32132201055772214,
+        -0.20656414964425096,
+        -0.27541886619232514
+      ]
+    }
+  },
+  "swad_macro": 71.41080821776535,
+  "cifa_macro": 71.45105056455633,
+  "delta_macro": 0.0402423467909756,
+  "pooled_delta_mean": 0.040242346790974895,
+  "pooled_delta_std": 0.7343186038384499,
+  "positive_cells": 11,
+  "n_cells": 20,
+  "worst_domain_per_seed": [
+    {
+      "seed": 0,
+      "swad_worst_domain": "Clipart",
+      "swad_worst_acc": 55.30355097365407,
+      "cifa_worst_acc": 54.79954180985109,
+      "delta": -0.5040091638029764,
+      "cifa_worst_domain": "Clipart"
+    },
+    {
+      "seed": 1,
+      "swad_worst_domain": "Clipart",
+      "swad_worst_acc": 54.11225658648339,
+      "cifa_worst_acc": 54.52462772050401,
+      "delta": 0.4123711340206171,
+      "cifa_worst_domain": "Clipart"
+    },
+    {
+      "seed": 2,
+      "swad_worst_domain": "Clipart",
+      "swad_worst_acc": 55.899198167239405,
+      "cifa_worst_acc": 55.39518900343643,
+      "delta": -0.5040091638029764,
+      "cifa_worst_domain": "Clipart"
+    },
+    {
+      "seed": 3,
+      "swad_worst_domain": "Clipart",
+      "swad_worst_acc": 53.12714776632303,
+      "cifa_worst_acc": 53.8602520045819,
+      "delta": 0.7331042382588748,
+      "cifa_worst_domain": "Clipart"
+    },
+    {
+      "seed": 4,
+      "swad_worst_domain": "Clipart",
+      "swad_worst_acc": 56.3573883161512,
+      "cifa_worst_acc": 56.60939289805269,
+      "delta": 0.2520045819014882,
+      "cifa_worst_domain": "Clipart"
+    }
+  ],
+  "gate_min": 1.0,
+  "gate_mean": 1.0,
+  "trigger_mean": 0.4999199999999999,
+  "kl_mean": 0.09532723666118698,
+  "hardest_domain": "Clipart"
+}

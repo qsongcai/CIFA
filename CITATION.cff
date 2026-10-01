@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this code or the corresponding paper, please cite it."
+title: "Feature-Statistic Augmentation as Causal Invariant Transformations: A Unified Framework for Domain Generalization"
+type: article
+# Volume/article/DOI and the public repository URL are added upon acceptance/release.
+authors:
+  - family-names: "Cai"
+    given-names: "Qingsong"
+    affiliation: "School of Computer and Artificial Intelligence, Beijing Technology and Business University, Beijing 100048, China"
+    email: "caiqs@btbu.edu.cn"
+  - family-names: "Wang"
+    given-names: "Hao"
+    affiliation: "School of Computer and Artificial Intelligence, Beijing Technology and Business University, Beijing 100048, China"
+  - family-names: "Hao"
+    given-names: "Tianze"
+    affiliation: "School of Computer and Artificial Intelligence, Beijing Technology and Business University, Beijing 100048, China"
+year: 2026
+journal: "IEEE Access (submitted)"
+# repository-code: add the public GitHub URL upon release.
