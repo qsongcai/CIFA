@@ -1,0 +1,53 @@
+{
+  "dataset": "pacs",
+  "method": "dsu",
+  "target_domain": "cartoon",
+  "seed": 5,
+  "target_acc": 0.8024744027303754,
+  "target_loss": 0.8444441046006342,
+  "holdout_acc": {
+    "art_painting": 0.948780487804878,
+    "photo": 0.9880239520958084,
+    "sketch": 0.9567430025445293
+  },
+  "worst_holdout_acc": 0.948780487804878,
+  "swad_n_checkpoints": 0,
+  "aug_trigger_fraction": 0.0,
+  "aug_mean_consistency_kl": null,
+  "aug_mean_gate": null,
+  "hparams": {
+    "backbone": "resnet50",
+    "pretrained": true,
+    "steps": 5000,
+    "batch_size": 32,
+    "lr": 5e-05,
+    "weight_decay": 0.0,
+    "holdout_fraction": 0.2,
+    "freeze_bn": true,
+    "dropout": 0.0,
+    "swad": false,
+    "swad_n_converge": 3,
+    "swad_n_tolerance": 6,
+    "swad_tolerance_ratio": 0.3,
+    "swad_tolerance_epoch": 5,
+    "cifa_enabled": false,
+    "cifa_layers": [
+      "layer1",
+      "layer2"
+    ],
+    "cifa_prob": 0.5,
+    "cifa_mix_mode": "mix",
+    "cifa_lambda_min": 0.1,
+    "cifa_lambda_max": 0.9,
+    "cifa_baseline_momentum": 0.9,
+    "cifa_moments_eps": 1e-05,
+    "cifa_sigma_min": 0.001,
+    "cifa_consistency_coef": 1.0,
+    "cifa_consistency_delta": 2.0,
+    "cifa_soft_eta": 0.5,
+    "stat_aug": "dsu",
+    "stat_aug_prob": 0.5,
+    "mixstyle_alpha": 0.1,
+    "stat_aug_eps": 1e-06
+  }
+}

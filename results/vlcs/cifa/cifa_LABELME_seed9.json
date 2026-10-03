@@ -1,0 +1,49 @@
+{
+  "dataset": "vlcs",
+  "method": "cifa",
+  "target_domain": "LABELME",
+  "seed": 9,
+  "target_acc": 0.6359186746987951,
+  "target_loss": 2.627479166577918,
+  "holdout_acc": {
+    "CALTECH": 0.9929328621908127,
+    "PASCAL": 0.8992592592592593,
+    "SUN": 0.8490853658536586
+  },
+  "worst_holdout_acc": 0.8490853658536586,
+  "swad_n_checkpoints": 4,
+  "aug_trigger_fraction": 0.5002,
+  "aug_mean_consistency_kl": 0.043930685604349796,
+  "aug_mean_gate": 1.0,
+  "hparams": {
+    "backbone": "resnet50",
+    "pretrained": true,
+    "steps": 5000,
+    "batch_size": 32,
+    "lr": 5e-05,
+    "weight_decay": 0.0,
+    "holdout_fraction": 0.2,
+    "freeze_bn": true,
+    "dropout": 0.0,
+    "swad": true,
+    "swad_n_converge": 3,
+    "swad_n_tolerance": 6,
+    "swad_tolerance_ratio": 0.3,
+    "swad_tolerance_epoch": 5,
+    "cifa_enabled": true,
+    "cifa_layers": [
+      "layer1",
+      "layer2"
+    ],
+    "cifa_prob": 0.5,
+    "cifa_mix_mode": "mix",
+    "cifa_lambda_min": 0.1,
+    "cifa_lambda_max": 0.9,
+    "cifa_baseline_momentum": 0.9,
+    "cifa_moments_eps": 1e-05,
+    "cifa_sigma_min": 0.001,
+    "cifa_consistency_coef": 1.0,
+    "cifa_consistency_delta": 2.0,
+    "cifa_soft_eta": 0.5
+  }
+}

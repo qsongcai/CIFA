@@ -1,0 +1,49 @@
+{
+  "dataset": "officehome",
+  "method": "cifa",
+  "target_domain": "Art",
+  "seed": 8,
+  "target_acc": 0.6670786979810466,
+  "target_loss": 1.7548459386648736,
+  "holdout_acc": {
+    "Clipart": 0.8442153493699885,
+    "Product": 0.918918918918919,
+    "Real World": 0.851894374282434
+  },
+  "worst_holdout_acc": 0.8442153493699885,
+  "swad_n_checkpoints": 4,
+  "aug_trigger_fraction": 0.5052,
+  "aug_mean_consistency_kl": 0.0945958841183122,
+  "aug_mean_gate": 1.0,
+  "hparams": {
+    "backbone": "resnet50",
+    "pretrained": true,
+    "steps": 5000,
+    "batch_size": 32,
+    "lr": 5e-05,
+    "weight_decay": 0.0,
+    "holdout_fraction": 0.2,
+    "freeze_bn": true,
+    "dropout": 0.0,
+    "swad": true,
+    "swad_n_converge": 3,
+    "swad_n_tolerance": 6,
+    "swad_tolerance_ratio": 0.3,
+    "swad_tolerance_epoch": 5,
+    "cifa_enabled": true,
+    "cifa_layers": [
+      "layer1",
+      "layer2"
+    ],
+    "cifa_prob": 0.5,
+    "cifa_mix_mode": "mix",
+    "cifa_lambda_min": 0.1,
+    "cifa_lambda_max": 0.9,
+    "cifa_baseline_momentum": 0.9,
+    "cifa_moments_eps": 1e-05,
+    "cifa_sigma_min": 0.001,
+    "cifa_consistency_coef": 1.0,
+    "cifa_consistency_delta": 2.0,
+    "cifa_soft_eta": 0.5
+  }
+}
