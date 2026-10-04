@@ -92,15 +92,26 @@ advantage is a small improvement on the **worst domain** of PACS, VLCS and
 Terra. On OfficeHome there is **no measurable gain** (Δ≈0.04). See
 [`docs/CLAIMS.md`](docs/CLAIMS.md).
 
-## 4. Component ablation (PACS, 100 runs)
+## 4. Ablations on PACS
+
+**Remaining component ablation (4 variants $\times$ 4 targets $\times$ 5 seeds):**
 
 | variant | overall mean±std | Δ vs full (overall) | Δ vs full (worst domain) |
 |---|---|---|---|
 | full | 88.36±0.48 | — | — |
 | fullmoment (mix full moments) | 88.59±0.67 | +0.23 | +0.09 |
-| noguard (no KL guard) | 87.34±1.27 | −1.01 | −3.36 |
 | uniform aggregation | 87.88±0.32 | −0.47 | −1.28 |
 | noswad | 85.93±1.70 | −2.42 | −1.36 |
+
+**Gate $\times$ penalty factorial (4 cells $\times$ 4 targets $\times$ 10 seeds):**
+removing both safeguards (`noguard`) changes overall accuracy by −0.36 (paired
+−0.36±0.79, 95% CI [−0.92, +0.20]; a TOST procedure at ±1 point establishes
+equivalence) and the own-worst target by −1.55 (p = 0.079, not significant).
+Neither safeguard gives a detectable gain on PACS: the gate is never invoked
+(mean gate identically 1.00 across the tolerance sweep δ ∈ {0.5, 1, 2, 8}), so
+both act as dormant safeguards that fire only under stronger, deliberately
+stressed augmentations. Overall / own-worst cells: full 88.29/81.06, gateonly
+88.60/80.54, penaltyonly 88.15/80.65, noguard 87.93/79.52.
 
 `fullmoment` is within run-to-run noise: the baseline/deviation split is what
 makes the content-preservation bound possible, not a source of accuracy. Removing SWAD is
