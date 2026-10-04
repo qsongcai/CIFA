@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this code or the corresponding paper, please cite it."
-title: "Feature-Statistic Augmentation as Causal Invariant Transformations: A Unified Framework for Domain Generalization"
+title: "Content-conditioned Invariant Feature-statistic Augmentation: Unifying Robustness and Weight Averaging for Domain Generalization"
 type: article
 # Volume/article/DOI and the public repository URL are added upon acceptance/release.
 authors:

@@ -1,9 +1,9 @@
-# CIFA — Causally Invariant Feature Augmentation
+# CIFA — Content-conditioned Invariant Feature-statistic Augmentation
 
 **Reproducibility package** for
 
-> *Feature-Statistic Augmentation as Causal Invariant Transformations: A Unified
-> Framework for Domain Generalization*
+> *Content-conditioned Invariant Feature-statistic Augmentation: Unifying
+> Robustness and Weight Averaging for Domain Generalization*
 >
 > Qingsong Cai (corresponding author), Hao Wang, Tianze Hao — School of
 > Computer and Artificial Intelligence, Beijing Technology and Business
@@ -103,7 +103,7 @@ Terra. On OfficeHome there is **no measurable gain** (Δ≈0.04). See
 | noswad | 85.93±1.70 | −2.42 | −1.36 |
 
 `fullmoment` is within run-to-run noise: the baseline/deviation split is what
-makes the CIT certificate possible, not a source of accuracy. Removing SWAD is
+makes the content-preservation bound possible, not a source of accuracy. Removing SWAD is
 the largest single drop, i.e. weight averaging sets the overall level; the
 feature-moment term targets the worst domain.
 

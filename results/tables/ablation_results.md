@@ -10,4 +10,4 @@ PACS, 5 variants × 4 target domains × 5 seeds = 100 runs.
 | uniform | 87.88±0.32 | -0.47 | -1.28 |
 | noswad | 85.93±1.70 | -2.42 | -1.36 |
 
-> `fullmoment` (+0.23) is within run-to-run noise: the baseline/deviation split is what enables the CIT certificate, not a source of accuracy. `noswad` is the largest drop (−2.42), i.e. weight averaging drives the overall level; the feature-moment term targets the worst domain.
+> `fullmoment` (+0.23) is within run-to-run noise: the baseline/deviation split is what enables the content-preservation bound, not a source of accuracy. `noswad` is the largest drop (−2.42), i.e. weight averaging drives the overall level; the feature-moment term targets the worst domain.

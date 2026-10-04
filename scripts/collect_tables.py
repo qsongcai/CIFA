@@ -218,7 +218,7 @@ def build_ablation_md(ablation, title):
             f"| {v} | {om:.2f}±{os:.2f} | {d_ov:+.2f} | {d_w:+.2f} |")
     lines += ["",
               "> `fullmoment` (+0.23) is within run-to-run noise: the "
-              "baseline/deviation split is what enables the CIT certificate, "
+              "baseline/deviation split is what enables the content-preservation bound, "
               "not a source of accuracy. `noswad` is the largest drop "
               "(−2.42), i.e. weight averaging drives the overall level; the "
               "feature-moment term targets the worst domain.",
