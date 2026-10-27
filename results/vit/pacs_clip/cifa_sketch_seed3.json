@@ -1,0 +1,9 @@
+{
+  "target_domain": "sketch",
+  "method": "cifa",
+  "seed": 3,
+  "test_acc": 91.8045,
+  "n_avg": 50,
+  "steps": 2000,
+  "backbone": "CLIP_ViT-B16_512d"
+}

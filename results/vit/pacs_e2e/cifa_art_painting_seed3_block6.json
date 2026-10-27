@@ -1,0 +1,22 @@
+{
+  "method": "cifa",
+  "target_domain": "art_painting",
+  "seed": 3,
+  "vit_block": 6,
+  "backbone": "ViT-B16_224_in1k_e2e",
+  "target_acc": 0.888671875,
+  "target_loss": 0.44309465936385095,
+  "holdout_acc": {
+    "cartoon": 0.9829424307036247,
+    "photo": 0.9970059880239521,
+    "sketch": 0.9745547073791349
+  },
+  "worst_holdout_acc": 0.9745547073791349,
+  "swad_n_checkpoints": 7,
+  "aug_trigger_fraction": 0.49966666666666665,
+  "aug_mean_consistency_kl": 0.0002155458959325398,
+  "aug_mean_gate": 1.0,
+  "steps": 3000,
+  "lr": 5e-05,
+  "batch_size": 32
+}

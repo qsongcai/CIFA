@@ -1,13 +1,14 @@
 {
+  "dataset": "pacs",
   "method": "swad",
   "target_domain": "sketch",
   "seed": 3,
-  "target_acc": 0.759480783914482,
-  "target_loss": 0.997026269324835,
+  "target_acc": 0.8172562993128022,
+  "target_loss": 0.6249341777821903,
   "holdout_acc": {
     "art_painting": 0.973170731707317,
-    "cartoon": 0.9786780383795309,
-    "photo": 0.9910179640718563
+    "cartoon": 0.9808102345415778,
+    "photo": 0.9940119760479041
   },
   "worst_holdout_acc": 0.973170731707317,
   "swad_n_checkpoints": 4,
@@ -43,6 +44,18 @@
     "cifa_sigma_min": 0.001,
     "cifa_consistency_coef": 1.0,
     "cifa_consistency_delta": 2.0,
-    "cifa_soft_eta": 0.5
+    "cifa_soft_eta": 0.5,
+    "stat_aug": "none",
+    "stat_aug_prob": 0.5,
+    "mixstyle_alpha": 0.1,
+    "stat_aug_eps": 1e-06,
+    "efdm_alpha": 0.1,
+    "coral_coef": 1.0,
+    "rsc_percentage": 0.333,
+    "rsc_stop_layer": "layer4",
+    "rsc_batch_percentage": 0.333,
+    "fish_inner_steps": 1,
+    "fish_inner_lr": 5e-05,
+    "fish_meta_lr": 1.0
   }
 }

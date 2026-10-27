@@ -1,15 +1,20 @@
 {
+  "dataset": "pacs",
+  "method": "cifa",
   "target_domain": "art_painting",
   "seed": 1,
-  "target_acc": 0.9091796875,
-  "target_loss": 0.2992456944521109,
+  "target_acc": 0.8955078125,
+  "target_loss": 0.3679897750262171,
   "holdout_acc": {
-    "cartoon": 0.9722814498933902,
-    "photo": 0.9970059880239521,
+    "cartoon": 0.9701492537313433,
+    "photo": 1.0,
     "sketch": 0.9770992366412213
   },
-  "worst_holdout_acc": 0.9722814498933902,
+  "worst_holdout_acc": 0.9701492537313433,
   "swad_n_checkpoints": 4,
+  "aug_trigger_fraction": 0.498,
+  "aug_mean_consistency_kl": 0.0209168641792859,
+  "aug_mean_gate": 1.0,
   "hparams": {
     "backbone": "resnet50",
     "pretrained": true,
@@ -39,6 +44,17 @@
     "cifa_sigma_min": 0.001,
     "cifa_consistency_coef": 1.0,
     "cifa_consistency_delta": 2.0,
-    "cifa_soft_eta": 0.5
+    "cifa_soft_eta": 0.5,
+    "stat_aug": "none",
+    "stat_aug_prob": 0.5,
+    "mixstyle_alpha": 0.1,
+    "stat_aug_eps": 1e-06,
+    "efdm_alpha": 0.1,
+    "coral_coef": 1.0,
+    "rsc_percentage": 0.333,
+    "rsc_stop_layer": "layer2",
+    "fish_inner_steps": 1,
+    "fish_inner_lr": 5e-05,
+    "fish_meta_lr": 1.0
   }
 }

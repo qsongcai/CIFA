@@ -1,0 +1,9 @@
+{
+  "target_domain": "cartoon",
+  "method": "swad",
+  "seed": 2,
+  "test_acc": 98.9334,
+  "n_avg": 50,
+  "steps": 2000,
+  "backbone": "CLIP_ViT-B16_512d"
+}

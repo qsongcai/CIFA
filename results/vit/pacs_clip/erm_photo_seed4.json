@@ -1,0 +1,9 @@
+{
+  "target_domain": "photo",
+  "method": "erm",
+  "seed": 4,
+  "test_acc": 99.4012,
+  "n_avg": 0,
+  "steps": 2000,
+  "backbone": "CLIP_ViT-B16_512d"
+}

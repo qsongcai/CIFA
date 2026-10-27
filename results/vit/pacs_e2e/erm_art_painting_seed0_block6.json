@@ -1,0 +1,22 @@
+{
+  "method": "erm",
+  "target_domain": "art_painting",
+  "seed": 0,
+  "vit_block": 6,
+  "backbone": "ViT-B16_224_in1k_e2e",
+  "target_acc": 0.83740234375,
+  "target_loss": 0.6091866006609052,
+  "holdout_acc": {
+    "cartoon": 0.9616204690831557,
+    "photo": 0.9850299401197605,
+    "sketch": 0.9465648854961832
+  },
+  "worst_holdout_acc": 0.9465648854961832,
+  "swad_n_checkpoints": 0,
+  "aug_trigger_fraction": 0.0,
+  "aug_mean_consistency_kl": null,
+  "aug_mean_gate": null,
+  "steps": 3000,
+  "lr": 5e-05,
+  "batch_size": 32
+}

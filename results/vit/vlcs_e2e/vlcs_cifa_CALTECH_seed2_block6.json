@@ -1,0 +1,23 @@
+{
+  "dataset": "vlcs",
+  "method": "cifa",
+  "target_domain": "CALTECH",
+  "seed": 2,
+  "vit_block": 6,
+  "backbone": "ViT-B16_224_in1k_e2e",
+  "target_acc": 0.9858490566037735,
+  "target_loss": 0.03631503373946784,
+  "holdout_acc": {
+    "LABELME": 0.7455089820359282,
+    "PASCAL": 0.8823529411764706,
+    "SUN": 0.8280871670702179
+  },
+  "worst_holdout_acc": 0.7455089820359282,
+  "swad_n_checkpoints": 12,
+  "aug_trigger_fraction": 0.49366666666666664,
+  "aug_mean_consistency_kl": 0.0004167899445557266,
+  "aug_mean_gate": 1.0,
+  "steps": 3000,
+  "lr": 5e-05,
+  "batch_size": 32
+}

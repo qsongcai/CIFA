@@ -1,0 +1,9 @@
+{
+  "target_domain": "photo",
+  "method": "cifa",
+  "seed": 0,
+  "test_acc": 99.3413,
+  "n_avg": 50,
+  "steps": 2000,
+  "backbone": "CLIP_ViT-B16_512d"
+}

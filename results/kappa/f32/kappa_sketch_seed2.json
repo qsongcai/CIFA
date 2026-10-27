@@ -1,0 +1,214 @@
+{
+  "dataset": "pacs",
+  "target_domain": "sketch",
+  "seed": 2,
+  "n_batch": 256,
+  "n_valley_points": 4,
+  "window_epochs": [
+    5,
+    6,
+    7,
+    8
+  ],
+  "valley_start": 3,
+  "valley_end": 8,
+  "n_captured_epochs": 12,
+  "r2": 2.422847176965309,
+  "r": 1.5565497669413944,
+  "rms_gap_h_ens_minus_h_bar": 0.4651930630207062,
+  "rms_logits": 5.2803955078125,
+  "gap_over_logits": 0.08809814763542606,
+  "kappa_eff": 0.38400528720377225,
+  "kink_sample_fraction_at_alpha1": 1.0,
+  "fraction_sample_direction_with_linear_piece": 0.0,
+  "rms_gap_linear_samples": 0.0,
+  "rms_gap_kink_samples": 0.4651930630207062,
+  "rms_smooth_curvature_gap_adaptive": 0.0,
+  "linear_cell_alpha": 1e-09,
+  "linear_cell_global_radius": 1.5565497669413944e-09,
+  "swad_window_to_linear_cell_ratio": 1000000000.0,
+  "alpha_scan": {
+    "1e-09": {
+      "cross_kink_fraction": 0.0,
+      "mean_flip_units": 0.0,
+      "median_flip_units": 0.0,
+      "rms_interior_quadratic_on_linear_piece": null
+    },
+    "1e-08": {
+      "cross_kink_fraction": 0.0390625,
+      "mean_flip_units": 0.533203125,
+      "median_flip_units": 0.0,
+      "rms_interior_quadratic_on_linear_piece": null
+    },
+    "1e-07": {
+      "cross_kink_fraction": 1.0,
+      "mean_flip_units": 81.2568359375,
+      "median_flip_units": 78.5,
+      "rms_interior_quadratic_on_linear_piece": null
+    },
+    "1e-06": {
+      "cross_kink_fraction": 1.0,
+      "mean_flip_units": 670.3232421875,
+      "median_flip_units": 672.25,
+      "rms_interior_quadratic_on_linear_piece": null
+    },
+    "1e-05": {
+      "cross_kink_fraction": 1.0,
+      "mean_flip_units": 1431.1435546875,
+      "median_flip_units": 1422.5,
+      "rms_interior_quadratic_on_linear_piece": null
+    },
+    "0.0001": {
+      "cross_kink_fraction": 1.0,
+      "mean_flip_units": 2346.5478515625,
+      "median_flip_units": 2297.0,
+      "rms_interior_quadratic_on_linear_piece": null
+    },
+    "0.001": {
+      "cross_kink_fraction": 1.0,
+      "mean_flip_units": 3784.0107421875,
+      "median_flip_units": 3650.5,
+      "rms_interior_quadratic_on_linear_piece": 0.0
+    },
+    "0.01": {
+      "cross_kink_fraction": 1.0,
+      "mean_flip_units": 10871.8876953125,
+      "median_flip_units": 10562.25,
+      "rms_interior_quadratic_on_linear_piece": 0.0
+    },
+    "0.1": {
+      "cross_kink_fraction": 1.0,
+      "mean_flip_units": 81518.9765625,
+      "median_flip_units": 80566.0,
+      "rms_interior_quadratic_on_linear_piece": 0.0
+    },
+    "0.5": {
+      "cross_kink_fraction": 1.0,
+      "mean_flip_units": 393251.96875,
+      "median_flip_units": 389675.25,
+      "rms_interior_quadratic_on_linear_piece": 0.0
+    },
+    "1.0": {
+      "cross_kink_fraction": 1.0,
+      "mean_flip_units": 765836.4375,
+      "median_flip_units": 759096.25,
+      "rms_interior_quadratic_on_linear_piece": 0.0
+    }
+  },
+  "radius_sweep": [
+    {
+      "n_points": 2,
+      "epochs": [
+        6,
+        7
+      ],
+      "r2": 0.905142189594252,
+      "r": 0.9513896097783767,
+      "rms_gap": 0.3975578844547272,
+      "gap_over_logits": 0.07528941418621553
+    },
+    {
+      "n_points": 4,
+      "epochs": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "r2": 2.4228471868900288,
+      "r": 1.5565497701294453,
+      "rms_gap": 0.4652037024497986,
+      "gap_over_logits": 0.08810016252788566
+    },
+    {
+      "n_points": 6,
+      "epochs": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "r2": 3.6852638631291446,
+      "r": 1.9197041082232293,
+      "rms_gap": 0.4903402626514435,
+      "gap_over_logits": 0.0928605181043675
+    },
+    {
+      "n_points": 8,
+      "epochs": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "r2": 4.972425865516666,
+      "r": 2.229893689285807,
+      "rms_gap": 0.4926917850971222,
+      "gap_over_logits": 0.09330584884563481
+    },
+    {
+      "n_points": 9,
+      "epochs": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "r2": 5.573007299275517,
+      "r": 2.3607217750670064,
+      "rms_gap": 0.4983160197734833,
+      "gap_over_logits": 0.09437096502264085
+    },
+    {
+      "n_points": 10,
+      "epochs": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "r2": 6.340881602580095,
+      "r": 2.5181107208739046,
+      "rms_gap": 0.501832127571106,
+      "gap_over_logits": 0.09503684465086576
+    },
+    {
+      "n_points": 11,
+      "epochs": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "r2": 6.976502064729374,
+      "r": 2.6413068857535986,
+      "rms_gap": 0.5060803294181824,
+      "gap_over_logits": 0.09584136806976327
+    }
+  ],
+  "loglog_slope_gap_vs_r": 0.23113431283586827
+}

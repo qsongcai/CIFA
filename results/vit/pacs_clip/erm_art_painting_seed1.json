@@ -1,0 +1,9 @@
+{
+  "target_domain": "art_painting",
+  "method": "erm",
+  "seed": 1,
+  "test_acc": 98.291,
+  "n_avg": 0,
+  "steps": 2000,
+  "backbone": "CLIP_ViT-B16_512d"
+}

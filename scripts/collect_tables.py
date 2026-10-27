@@ -107,8 +107,10 @@ def paired(cifa, swad, domains):
          mean([swad[d][s] for d in domains]) for s in seeds])
     worst = []
     for s in seeds:
-        wd = min(domains, key=lambda d: swad[d][s])
-        worst.append(cifa[wd][s] - swad[wd][s])
+        # each arm's accuracy on its own worst target domain, then differenced
+        wd_c = min(domains, key=lambda d: cifa[d][s])
+        wd_s = min(domains, key=lambda d: swad[d][s])
+        worst.append(cifa[wd_c][s] - swad[wd_s][s])
     return {
         "per_domain": per_domain,
         "overall_delta": overall_delta,
@@ -185,9 +187,10 @@ def build_main_md(main, title):
                 f"| {dm:+.2f} | {dpos}/{dn} |")
         lines.append("")
     lines += [
-        "> `worst-domain Δ` compares, for each seed, CIFA against SWAD on the "
-        "domain where SWAD is weakest that seed. OfficeHome shows no measurable "
-        "gain (Δ≈0.04 overall); see docs/CLAIMS.md.",
+        "> `worst-domain Δ` compares, for each seed, each arm's accuracy on its "
+        "own weakest target domain, then differenced. The PACS row uses the "
+        "authoritative unified-code batch; the contrast is a statistical tie, "
+        "and the other benchmarks read as null or near-null. See docs/CLAIMS.md.",
         "",
     ]
     return "\n".join(lines), details

@@ -1,0 +1,23 @@
+{
+  "dataset": "vlcs",
+  "method": "erm",
+  "target_domain": "LABELME",
+  "seed": 2,
+  "vit_block": 6,
+  "backbone": "ViT-B16_224_in1k_e2e",
+  "target_acc": 0.5947302383939774,
+  "target_loss": 2.990503015601949,
+  "holdout_acc": {
+    "CALTECH": 1.0,
+    "PASCAL": 0.8470588235294118,
+    "SUN": 0.8232445520581114
+  },
+  "worst_holdout_acc": 0.8232445520581114,
+  "swad_n_checkpoints": 0,
+  "aug_trigger_fraction": 0.0,
+  "aug_mean_consistency_kl": null,
+  "aug_mean_gate": null,
+  "steps": 3000,
+  "lr": 5e-05,
+  "batch_size": 32
+}

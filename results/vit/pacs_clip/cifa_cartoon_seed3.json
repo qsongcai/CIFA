@@ -1,0 +1,9 @@
+{
+  "target_domain": "cartoon",
+  "method": "cifa",
+  "seed": 3,
+  "test_acc": 98.8481,
+  "n_avg": 50,
+  "steps": 2000,
+  "backbone": "CLIP_ViT-B16_512d"
+}

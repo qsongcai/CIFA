@@ -1,0 +1,132 @@
+{
+  "dataset": "pacs",
+  "target_domain": "photo",
+  "seed": 2,
+  "mean_dt": 2.1527522655701414,
+  "param_audit": [
+    {
+      "alpha": 1e-09,
+      "requested_eps": 2.1527522655701414e-09,
+      "requested_per_coord_rms": 4.4336678712315877e-13,
+      "f32_ULP_at_1": 1.1920928955078125e-07,
+      "f32_applied_over_requested_norm": 0.03381699088194165,
+      "f32_direction_cos_to_v": 0.025572467501576875,
+      "f32_fraction_params_changed": 0.00028970694551829716,
+      "f64_applied_over_requested_norm": 0.9999999975310667,
+      "f64_direction_cos_to_v": 0.9999999999437273,
+      "f64_fraction_params_changed": 0.9974350119030106
+    },
+    {
+      "alpha": 1e-08,
+      "requested_eps": 2.1527522655701415e-08,
+      "requested_per_coord_rms": 4.433667871231588e-12,
+      "f32_ULP_at_1": 1.1920928955078125e-07,
+      "f32_applied_over_requested_norm": 0.1085904518669105,
+      "f32_direction_cos_to_v": 0.0813411889585176,
+      "f32_fraction_params_changed": 0.0029040258152217713,
+      "f64_applied_over_requested_norm": 1.0000000003583671,
+      "f64_direction_cos_to_v": 0.9999999999994318,
+      "f64_fraction_params_changed": 0.9974350119030106
+    },
+    {
+      "alpha": 1e-07,
+      "requested_eps": 2.1527522655701413e-07,
+      "requested_per_coord_rms": 4.433667871231588e-11,
+      "f32_ULP_at_1": 1.1920928955078125e-07,
+      "f32_applied_over_requested_norm": 0.34208692639285165,
+      "f32_direction_cos_to_v": 0.25683995453697017,
+      "f32_fraction_params_changed": 0.029094891028619993,
+      "f64_applied_over_requested_norm": 0.9999999999946664,
+      "f64_direction_cos_to_v": 0.9999999999999946,
+      "f64_fraction_params_changed": 0.9974350119030106
+    },
+    {
+      "alpha": 1e-06,
+      "requested_eps": 2.152752265570141e-06,
+      "requested_per_coord_rms": 4.4336678712315874e-10,
+      "f32_ULP_at_1": 1.1920928955078125e-07,
+      "f32_applied_over_requested_norm": 0.9013309559576167,
+      "f32_direction_cos_to_v": 0.71555928875259,
+      "f32_fraction_params_changed": 0.25989991833911985,
+      "f64_applied_over_requested_norm": 0.9999999999996897,
+      "f64_direction_cos_to_v": 1.0,
+      "f64_fraction_params_changed": 0.9974350119030106
+    },
+    {
+      "alpha": 1e-05,
+      "requested_eps": 2.1527522655701415e-05,
+      "requested_per_coord_rms": 4.433667871231588e-09,
+      "f32_ULP_at_1": 1.1920928955078125e-07,
+      "f32_applied_over_requested_norm": 1.0098432392877312,
+      "f32_direction_cos_to_v": 0.9863391616141604,
+      "f32_fraction_params_changed": 0.8119205118795118,
+      "f64_applied_over_requested_norm": 1.0000000000001108,
+      "f64_direction_cos_to_v": 1.0000000000000004,
+      "f64_fraction_params_changed": 0.9974350119030106
+    },
+    {
+      "alpha": 0.001,
+      "requested_eps": 0.0021527522655701414,
+      "requested_per_coord_rms": 4.4336678712315877e-07,
+      "f32_ULP_at_1": 1.1920928955078125e-07,
+      "f32_applied_over_requested_norm": 1.0000175379485226,
+      "f32_direction_cos_to_v": 0.999983822210021,
+      "f32_fraction_params_changed": 0.9947033680828967,
+      "f64_applied_over_requested_norm": 0.9999999999999997,
+      "f64_direction_cos_to_v": 0.9999999999999996,
+      "f64_fraction_params_changed": 0.9974350119030106
+    }
+  ],
+  "f32_flips": {
+    "1e-09": {
+      "sample_flip_fraction": 0.0,
+      "mean_flip_units_per_sample_per_dir": 0.0
+    },
+    "1e-08": {
+      "sample_flip_fraction": 0.0400390625,
+      "mean_flip_units_per_sample_per_dir": 1.4130859375
+    },
+    "1e-07": {
+      "sample_flip_fraction": 0.939453125,
+      "mean_flip_units_per_sample_per_dir": 73.1494140625
+    },
+    "1e-06": {
+      "sample_flip_fraction": 1.0,
+      "mean_flip_units_per_sample_per_dir": 595.26953125
+    },
+    "1e-05": {
+      "sample_flip_fraction": 1.0,
+      "mean_flip_units_per_sample_per_dir": 1622.1220703125
+    },
+    "0.001": {
+      "sample_flip_fraction": 1.0,
+      "mean_flip_units_per_sample_per_dir": 3436.439453125
+    }
+  },
+  "f64_flips": {
+    "1e-09": {
+      "sample_flip_fraction": 0.0,
+      "mean_flip_units_per_sample_per_dir": 0.0
+    },
+    "1e-08": {
+      "sample_flip_fraction": 0.0068359375,
+      "mean_flip_units_per_sample_per_dir": 0.0068359375
+    },
+    "1e-07": {
+      "sample_flip_fraction": 0.0556640625,
+      "mean_flip_units_per_sample_per_dir": 0.0615234375
+    },
+    "1e-06": {
+      "sample_flip_fraction": 0.51171875,
+      "mean_flip_units_per_sample_per_dir": 0.728515625
+    },
+    "1e-05": {
+      "sample_flip_fraction": 0.9970703125,
+      "mean_flip_units_per_sample_per_dir": 8.19140625
+    },
+    "0.001": {
+      "sample_flip_fraction": 1.0,
+      "mean_flip_units_per_sample_per_dir": 811.48828125
+    }
+  }
+}

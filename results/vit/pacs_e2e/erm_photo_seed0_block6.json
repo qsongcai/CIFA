@@ -1,0 +1,22 @@
+{
+  "method": "erm",
+  "target_domain": "photo",
+  "seed": 0,
+  "vit_block": 6,
+  "backbone": "ViT-B16_224_in1k_e2e",
+  "target_acc": 0.9652694610778443,
+  "target_loss": 0.11611831832766355,
+  "holdout_acc": {
+    "art_painting": 0.9414634146341463,
+    "cartoon": 0.9637526652452025,
+    "sketch": 0.9567430025445293
+  },
+  "worst_holdout_acc": 0.9414634146341463,
+  "swad_n_checkpoints": 0,
+  "aug_trigger_fraction": 0.0,
+  "aug_mean_consistency_kl": null,
+  "aug_mean_gate": null,
+  "steps": 3000,
+  "lr": 5e-05,
+  "batch_size": 32
+}

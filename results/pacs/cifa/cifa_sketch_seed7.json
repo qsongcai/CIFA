@@ -1,18 +1,19 @@
 {
+  "dataset": "pacs",
   "method": "cifa",
   "target_domain": "sketch",
   "seed": 7,
-  "target_acc": 0.7933316365487402,
-  "target_loss": 0.7351911635640378,
+  "target_acc": 0.7841689997454823,
+  "target_loss": 0.7043081436730062,
   "holdout_acc": {
-    "art_painting": 0.9804878048780488,
-    "cartoon": 0.9850746268656716,
+    "art_painting": 0.9853658536585366,
+    "cartoon": 0.9786780383795309,
     "photo": 1.0
   },
-  "worst_holdout_acc": 0.9804878048780488,
+  "worst_holdout_acc": 0.9786780383795309,
   "swad_n_checkpoints": 4,
   "aug_trigger_fraction": 0.5098,
-  "aug_mean_consistency_kl": 0.027490239746963584,
+  "aug_mean_consistency_kl": 0.026814082214835503,
   "aug_mean_gate": 1.0,
   "hparams": {
     "backbone": "resnet50",
@@ -43,6 +44,18 @@
     "cifa_sigma_min": 0.001,
     "cifa_consistency_coef": 1.0,
     "cifa_consistency_delta": 2.0,
-    "cifa_soft_eta": 0.5
+    "cifa_soft_eta": 0.5,
+    "stat_aug": "none",
+    "stat_aug_prob": 0.5,
+    "mixstyle_alpha": 0.1,
+    "stat_aug_eps": 1e-06,
+    "efdm_alpha": 0.1,
+    "coral_coef": 1.0,
+    "rsc_percentage": 0.333,
+    "rsc_stop_layer": "layer4",
+    "rsc_batch_percentage": 0.333,
+    "fish_inner_steps": 1,
+    "fish_inner_lr": 5e-05,
+    "fish_meta_lr": 1.0
   }
 }

@@ -1,0 +1,22 @@
+{
+  "method": "swad",
+  "target_domain": "cartoon",
+  "seed": 2,
+  "vit_block": 6,
+  "backbone": "ViT-B16_224_in1k_e2e",
+  "target_acc": 0.8515358361774744,
+  "target_loss": 0.4518092976193303,
+  "holdout_acc": {
+    "art_painting": 0.9780487804878049,
+    "photo": 0.9940119760479041,
+    "sketch": 0.9618320610687023
+  },
+  "worst_holdout_acc": 0.9618320610687023,
+  "swad_n_checkpoints": 12,
+  "aug_trigger_fraction": 0.0,
+  "aug_mean_consistency_kl": null,
+  "aug_mean_gate": null,
+  "steps": 3000,
+  "lr": 5e-05,
+  "batch_size": 32
+}

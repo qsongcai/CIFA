@@ -1,0 +1,23 @@
+{
+  "dataset": "vlcs",
+  "method": "cifa",
+  "target_domain": "PASCAL",
+  "seed": 1,
+  "vit_block": 6,
+  "backbone": "ViT-B16_224_in1k_e2e",
+  "target_acc": 0.786771964461994,
+  "target_loss": 0.767567652469797,
+  "holdout_acc": {
+    "CALTECH": 0.9943820224719101,
+    "LABELME": 0.781437125748503,
+    "SUN": 0.847457627118644
+  },
+  "worst_holdout_acc": 0.781437125748503,
+  "swad_n_checkpoints": 13,
+  "aug_trigger_fraction": 0.48733333333333334,
+  "aug_mean_consistency_kl": 0.00041091134102081426,
+  "aug_mean_gate": 1.0,
+  "steps": 3000,
+  "lr": 5e-05,
+  "batch_size": 32
+}

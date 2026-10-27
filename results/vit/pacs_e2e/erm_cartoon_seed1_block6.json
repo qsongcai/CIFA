@@ -1,0 +1,22 @@
+{
+  "method": "erm",
+  "target_domain": "cartoon",
+  "seed": 1,
+  "vit_block": 6,
+  "backbone": "ViT-B16_224_in1k_e2e",
+  "target_acc": 0.7960750853242321,
+  "target_loss": 0.7655298352692874,
+  "holdout_acc": {
+    "art_painting": 0.9536585365853658,
+    "photo": 0.9670658682634731,
+    "sketch": 0.950381679389313
+  },
+  "worst_holdout_acc": 0.950381679389313,
+  "swad_n_checkpoints": 0,
+  "aug_trigger_fraction": 0.0,
+  "aug_mean_consistency_kl": null,
+  "aug_mean_gate": null,
+  "steps": 3000,
+  "lr": 5e-05,
+  "batch_size": 32
+}

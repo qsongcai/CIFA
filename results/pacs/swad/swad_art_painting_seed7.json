@@ -1,12 +1,13 @@
 {
+  "dataset": "pacs",
   "method": "swad",
   "target_domain": "art_painting",
   "seed": 7,
-  "target_acc": 0.91064453125,
-  "target_loss": 0.3124778284691274,
+  "target_acc": 0.89697265625,
+  "target_loss": 0.32336708123330027,
   "holdout_acc": {
-    "cartoon": 0.9829424307036247,
-    "photo": 0.9970059880239521,
+    "cartoon": 0.9786780383795309,
+    "photo": 0.9910179640718563,
     "sketch": 0.9745547073791349
   },
   "worst_holdout_acc": 0.9745547073791349,
@@ -43,6 +44,18 @@
     "cifa_sigma_min": 0.001,
     "cifa_consistency_coef": 1.0,
     "cifa_consistency_delta": 2.0,
-    "cifa_soft_eta": 0.5
+    "cifa_soft_eta": 0.5,
+    "stat_aug": "none",
+    "stat_aug_prob": 0.5,
+    "mixstyle_alpha": 0.1,
+    "stat_aug_eps": 1e-06,
+    "efdm_alpha": 0.1,
+    "coral_coef": 1.0,
+    "rsc_percentage": 0.333,
+    "rsc_stop_layer": "layer4",
+    "rsc_batch_percentage": 0.333,
+    "fish_inner_steps": 1,
+    "fish_inner_lr": 5e-05,
+    "fish_meta_lr": 1.0
   }
 }

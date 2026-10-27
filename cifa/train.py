@@ -15,6 +15,7 @@ import argparse
 import json
 import os
 import random
+from collections import deque
 
 import numpy as np
 import torch
@@ -136,6 +137,11 @@ def main():
                    help="override, e.g. --hparam cifa_prob=0.8")
     p.add_argument("--config", default=None,
                    help="YAML config (configs/*.yaml); CLI --hparam overrides it")
+    p.add_argument("--kappa_ckpt", default=None,
+                   help="if set, save SWAD-valley theta_t checkpoints to this "
+                        ".pt path (R1-6 curvature/kink estimation)")
+    p.add_argument("--kappa_pad", type=int, default=6,
+                   help="keep capturing this many epochs after the valley end")
     args = p.parse_args()
 
     spec = DATASETS[args.dataset]
@@ -193,6 +199,14 @@ def main():
         tolerance_ratio=cfg["swad_tolerance_ratio"],
         tolerance_epoch=cfg["swad_tolerance_epoch"]) if cfg["swad"] else None
     averaged = None
+    # ---- R1-6: capture per-epoch theta_t around the SWAD valley ----
+    kappa_on = bool(getattr(args, "kappa_ckpt", None)) and cfg["swad"]
+    recent_sd = deque(maxlen=cfg["swad_n_converge"])  # short look-back buffer
+    captured_sd = {}          # epoch -> CPU state_dict (in/around the valley)
+    window_epochs = []        # epochs actually averaged by SWAD
+    val_losses = []           # per-epoch hold-out loss (one entry per epoch)
+    capturing = False
+    capture_done = False
 
     merged_holdout = ConcatDataset(list(data["holdout_by_domain"].values()))
 
@@ -231,14 +245,53 @@ def main():
             if cfg["swad"]:
                 val_loss, _ = evaluate(model, merged_holdout, cfg, device)
                 start, end = valley.update(epoch, val_loss)
+                val_losses.append(val_loss)
                 if valley.need_average(epoch):
                     if averaged is None:
                         averaged = AveragedModel(model)
                     averaged.update(model)
+                    window_epochs.append(epoch)
+                # R1-6: snapshot theta_t around the valley (CPU RAM; no disk I/O yet)
+                if kappa_on and not capture_done:
+                    sd_cpu = {k: v.detach().cpu().clone()
+                              for k, v in model.state_dict().items()}
+                    recent_sd.append((epoch, sd_cpu))
+                    if start >= 0 and not capturing:
+                        capturing = True
+                        for e_, s_ in recent_sd:
+                            captured_sd[e_] = s_
+                    if capturing:
+                        captured_sd[epoch] = sd_cpu
+                        if end >= 0 and epoch >= end + args.kappa_pad:
+                            capture_done = True
                 model.train()
 
     # ---- final model selection: SWAD average if available ----
     if cfg["swad"] and averaged is not None and averaged.n > 0:
+        # R1-6: persist theta_bar plus the captured valley trajectory BEFORE
+        # loading the averaged weights back into the model.
+        if kappa_on:
+            theta_bar = {k: v.detach().cpu().clone()
+                         for k, v in averaged.state_dict().items()}
+            ckpt_dir = os.path.dirname(os.path.abspath(args.kappa_ckpt))
+            os.makedirs(ckpt_dir, exist_ok=True)
+            torch.save({
+                "dataset": args.dataset,
+                "target_domain": args.target_domain,
+                "seed": args.seed,
+                "variant": args.variant,
+                "hparams": cfg,
+                "num_classes": num_classes,
+                "valley_start": int(valley.start),
+                "valley_end": int(valley.end),
+                "window_epochs": list(window_epochs),
+                "val_losses": list(val_losses),
+                "theta_bar": theta_bar,
+                "traj": {int(e): s for e, s in captured_sd.items()},
+            }, args.kappa_ckpt)
+            print(f"[kappa] saved {len(captured_sd)} valley checkpoints "
+                  f"(window epochs {window_epochs}) -> {args.kappa_ckpt}",
+                  flush=True)
         model.load_state_dict(averaged.state_dict())
         print(f"SWAD averaged {averaged.n} epoch checkpoints", flush=True)
 

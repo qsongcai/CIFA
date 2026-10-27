@@ -1,0 +1,23 @@
+{
+  "dataset": "vlcs",
+  "method": "erm",
+  "target_domain": "SUN",
+  "seed": 0,
+  "vit_block": 6,
+  "backbone": "ViT-B16_224_in1k_e2e",
+  "target_acc": 0.6893401015228426,
+  "target_loss": 1.3008751477081764,
+  "holdout_acc": {
+    "CALTECH": 0.9943820224719101,
+    "LABELME": 0.7664670658682635,
+    "PASCAL": 0.7976470588235294
+  },
+  "worst_holdout_acc": 0.7664670658682635,
+  "swad_n_checkpoints": 0,
+  "aug_trigger_fraction": 0.0,
+  "aug_mean_consistency_kl": null,
+  "aug_mean_gate": null,
+  "steps": 3000,
+  "lr": 5e-05,
+  "batch_size": 32
+}

@@ -1,0 +1,22 @@
+{
+  "method": "cifa",
+  "target_domain": "sketch",
+  "seed": 0,
+  "vit_block": 6,
+  "backbone": "ViT-B16_224_in1k_e2e",
+  "target_acc": 0.7938406719266989,
+  "target_loss": 0.7948235320228373,
+  "holdout_acc": {
+    "art_painting": 0.975609756097561,
+    "cartoon": 0.9850746268656716,
+    "photo": 0.9970059880239521
+  },
+  "worst_holdout_acc": 0.975609756097561,
+  "swad_n_checkpoints": 12,
+  "aug_trigger_fraction": 0.49433333333333335,
+  "aug_mean_consistency_kl": 0.0003118984222691789,
+  "aug_mean_gate": 1.0,
+  "steps": 3000,
+  "lr": 5e-05,
+  "batch_size": 32
+}

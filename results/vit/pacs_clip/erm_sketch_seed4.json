@@ -1,0 +1,9 @@
+{
+  "target_domain": "sketch",
+  "method": "erm",
+  "seed": 4,
+  "test_acc": 92.059,
+  "n_avg": 0,
+  "steps": 2000,
+  "backbone": "CLIP_ViT-B16_512d"
+}

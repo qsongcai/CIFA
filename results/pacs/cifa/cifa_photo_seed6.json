@@ -1,18 +1,19 @@
 {
+  "dataset": "pacs",
   "method": "cifa",
   "target_domain": "photo",
   "seed": 6,
-  "target_acc": 0.9778443113772455,
-  "target_loss": 0.06069191094370335,
+  "target_acc": 0.9802395209580839,
+  "target_loss": 0.06829099798311007,
   "holdout_acc": {
-    "art_painting": 0.9804878048780488,
-    "cartoon": 0.9701492537313433,
-    "sketch": 0.960559796437659
+    "art_painting": 0.9829268292682927,
+    "cartoon": 0.9786780383795309,
+    "sketch": 0.9656488549618321
   },
-  "worst_holdout_acc": 0.960559796437659,
+  "worst_holdout_acc": 0.9656488549618321,
   "swad_n_checkpoints": 4,
   "aug_trigger_fraction": 0.4934,
-  "aug_mean_consistency_kl": 0.02640705305717892,
+  "aug_mean_consistency_kl": 0.026702272679963775,
   "aug_mean_gate": 1.0,
   "hparams": {
     "backbone": "resnet50",
@@ -43,6 +44,18 @@
     "cifa_sigma_min": 0.001,
     "cifa_consistency_coef": 1.0,
     "cifa_consistency_delta": 2.0,
-    "cifa_soft_eta": 0.5
+    "cifa_soft_eta": 0.5,
+    "stat_aug": "none",
+    "stat_aug_prob": 0.5,
+    "mixstyle_alpha": 0.1,
+    "stat_aug_eps": 1e-06,
+    "efdm_alpha": 0.1,
+    "coral_coef": 1.0,
+    "rsc_percentage": 0.333,
+    "rsc_stop_layer": "layer4",
+    "rsc_batch_percentage": 0.333,
+    "fish_inner_steps": 1,
+    "fish_inner_lr": 5e-05,
+    "fish_meta_lr": 1.0
   }
 }

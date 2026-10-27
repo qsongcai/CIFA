@@ -1,0 +1,9 @@
+{
+  "target_domain": "cartoon",
+  "method": "erm",
+  "seed": 0,
+  "test_acc": 99.0188,
+  "n_avg": 0,
+  "steps": 2000,
+  "backbone": "CLIP_ViT-B16_512d"
+}
