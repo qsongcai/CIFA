@@ -1,0 +1,13 @@
+%%
+%% Minimal `bbm.sty' compatibility shim.
+%% The MDPI class loads bbm, but this manuscript does not use any bbm face
+%% (\mathbbm etc.); it only uses amssymb's \mathbb. Map the bbm commands to
+%% amssymb so the class loads without the (absent) bbm Metafont fonts.
+%%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{bbm}[2026/10/27 minimal bbm compatibility shim]
+\RequirePackage{amssymb}
+\providecommand{\mathbbm}[1]{\mathbb{#1}}
+\providecommand{\mathbbmss}[1]{\mathbb{#1}}
+\providecommand{\mathbbmtt}[1]{\mathtt{#1}}
+\endinput
