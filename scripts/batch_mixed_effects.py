@@ -31,14 +31,14 @@ import pandas as pd
 from scipy import stats as st
 from statsmodels.regression.mixed_linear_model import MixedLM
 
-ROOT = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 DOMAINS = ["art_painting", "cartoon", "photo", "sketch"]
 SEEDS = list(range(10))
 
 
 def acc(batch, method, domain, seed, field):
-    base = ("CIFA-Repro/results/pacs" if batch == "ref"
-            else "baselines_20261004/results_classic")
+    base = ("_preview_n10/results/pacs" if batch == "ref"
+            else "CIFA-Repro/results/pacs")
     p = os.path.join(ROOT, base, method, f"{method}_{domain}_seed{seed}.json")
     return 100.0 * json.load(open(p))[field]
 
