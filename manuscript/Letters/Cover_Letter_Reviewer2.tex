@@ -1,0 +1,137 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue}
+\definecolor{revblue}{RGB}{0,0,180}
+\newcommand{\loc}[1]{\textbf{[\textcolor{revblue}{Tracked PDF: #1}]}}
+\setlist{nosep,leftmargin=1.4em}
+\setlength{\parskip}{0.55em}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\begin{center}
+{\Large\textbf{Cover Letter to Reviewer 2}}\\[0.5em]
+\textbf{Minor Revision Round}
+\end{center}
+
+\textbf{Manuscript:} ``Content-Conditioned Invariant Feature-Statistic
+Augmentation: Unifying Robustness and Weight Averaging for Domain
+Generalization'' (CIFA)\\
+\textbf{Journal:} \textit{Electronics} (MDPI)\qquad
+\textbf{Manuscript ID:} electronics-4654208\\
+\textbf{Date:} 3 November 2026
+
+\hrule
+\vspace{0.4em}
+
+Dear Reviewer 2,
+
+We thank you for the candid and careful assessment, and for acknowledging that
+the presentation issues have been addressed, that the claims have been
+appropriately revised, and that the null and non-replicated results are reported
+transparently. The remaining concerns concern the interpretation and
+positioning of the work rather than additional experiments. We respond to each
+point below; the location tag at the start of every response gives the exact
+page and line range in the tracked PDF, which uses continuous line numbering.
+
+\subsection*{Point 1 --- Necessity of the distinctive components}
+\loc{Page 33, Lines 1070--1074; Proposition 1, Pages 8--9, Lines 304--348}
+
+We agree that the content--style decomposition is not a source of measured
+accuracy: full-moment mixing is statistically indistinguishable from full CIFA
+(paired $+0.23\pm0.75$, $p=0.53$), and removing weight averaging is the
+dominant ablation ($2.42$ points). We would, however, distinguish accuracy
+contribution from theoretical role. The decomposition is not intended to
+improve accuracy; it is the structural condition that makes the
+content-preservation bound admissible. By mixing only the style deviation and
+fixing the content baseline, the construction guarantees
+$\mathbb{E}[\mathbf{d}\mid Y]=0$ and thereby licenses the total-variation bound
+of Proposition~1. Mixing the full moments does not satisfy this condition and
+cannot carry the same guarantee, even when its accuracy is matched. The two
+constructions are tied in accuracy but not in the guarantees they provide;
+empirical equivalence in accuracy does not establish logical equivalence in the
+conditions each satisfies.
+
+\subsection*{Point 2 --- Value of the unification}
+\loc{Pages 8--11, Lines 304--400}
+
+We explicitly position the contribution as integration rather than a new
+operator. The unification is not a concatenation of existing techniques: it
+places feature-moment augmentation, convex-hull minimax, and weight averaging
+under one causal-invariance principle and states the conditions under which
+each applies. This yields testable predictions---content--style separability as
+an enabling rather than sufficient condition, the behavior of the coverage
+gap, and the second-order flat-minima approximation. Together with the
+reproducible platform and the falsifiable boundary, this allows later methods
+to be compared on a common footing and avoids repeated investment in directions
+already shown to be ineffective. We do not claim a deployment advantage; the
+practical significance lies in the unified understanding and the
+well-characterized baseline.
+
+\subsection*{Point 3 --- Strength of the assumptions and the coverage term}
+\loc{Page 8, Lines 304--322; Page 36, Lines 1171--1173}
+
+The assumptions are now stated, tested, and falsifiable premises rather than
+hidden conditions. Content--style separability is labeled an enabling premise,
+and the trajectory--augmentation alignment is presented as an empirically
+supported assumption rather than a theorem, with its limitations stated. The
+target access required to evaluate the coverage-gap term is an inherent
+property of target-free generalization, not a limitation unique to this work; we
+demonstrate the behavior of both terms in a controlled moment-space setting
+(Figure~2, Page~14) rather than presenting the term as computable without
+target data. A strong assumption is not an incorrect one; the value of the
+analysis is that its conditions are explicit and open to falsification.
+
+\subsection*{Point 4 --- Weakening claims versus adding evidence}
+\loc{Pages 21--23, Lines 795--828; Pages 8--11, Lines 304--400}
+
+When the evidence does not support a stronger claim, weakening that claim is
+the scientifically correct response; retaining an unsupported claim would be
+the error. The revision also adds positive evidence---an independent
+unified-code replication, a gate-pressure stress test, the alignment
+verification, and a corrected two-one-sided equivalence analysis. This
+evidence points to statistical equivalence and to boundary conditions rather
+than to superiority. What was weakened were the claims that did not hold; the
+claims that do hold---the unifying framework and the boundary
+characterization---are retained, strengthened, and made more precise and more
+readily falsifiable.
+
+\subsection*{Point 5 --- Overall scientific significance}
+\loc{Page 36, Lines 1168--1200}
+
+The manuscript does not claim a performance breakthrough. Its scientific
+significance is at the level of understanding: a unifying explanation, a
+systematic validity boundary, and a falsifiable, reproducible benchmark; the
+transparent reporting of null and non-replicated results is itself part of that
+contribution. The only actionable editorial item has been completed (Point~6).
+We respectfully ask that the work be judged on what it actually establishes
+rather than on the overstated claims of the original submission.
+
+\subsection*{Point 6 --- Editorial cleanup (duplicated or partially edited text)}
+\loc{Page 37, Lines 1209--1211}
+
+We carried out a full editorial review. The one concrete duplication was the
+data-availability statement, which appeared twice: a manually typeset
+``\textbf{Data availability.}'' paragraph and the MDPI template
+\texttt{\textbackslash dataavailability\{\}} command with identical content.
+The manual paragraph has been removed and the template command retained, so the
+statement now renders exactly once. The remaining items that can look like
+duplication in a text extraction (redefined revision macros, deliberate
+indentation and table alignment) were inspected individually and are not
+duplicated content.
+
+\vspace{0.6em}
+We thank you once again for the thorough and transparent review.
+
+\vspace{0.8em}
+Sincerely,\\
+Qingsong Cai (on behalf of all authors)\\
+\textit{Beijing Technology and Business University}\qquad
+\textit{caiqs@btbu.edu.cn}
+
+\end{document}

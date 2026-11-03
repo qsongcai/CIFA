@@ -1,0 +1,119 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue}
+\definecolor{revblue}{RGB}{0,0,180}
+\newcommand{\loc}[1]{\textbf{[\textcolor{revblue}{Tracked PDF: #1}]}}
+\setlist{nosep,leftmargin=1.4em}
+\setlength{\parskip}{0.55em}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\begin{center}
+{\Large\textbf{Cover Letter to Reviewer 3}}\\[0.5em]
+\textbf{Minor Revision Round}
+\end{center}
+
+\textbf{Manuscript:} ``Content-Conditioned Invariant Feature-Statistic
+Augmentation: Unifying Robustness and Weight Averaging for Domain
+Generalization'' (CIFA)\\
+\textbf{Journal:} \textit{Electronics} (MDPI)\qquad
+\textbf{Manuscript ID:} electronics-4654208\\
+\textbf{Date:} 3 November 2026
+
+\hrule
+\vspace{0.4em}
+
+Dear Reviewer 3,
+
+We sincerely thank you for the detailed and constructive assessment and for
+recognising the substantial improvement in the mathematical formulation,
+experimental validation, statistical analysis, and interpretation. We have
+addressed the three limited revisions. Each point below is preceded by a
+location tag giving the exact page and line range in the tracked PDF, which
+uses continuous line numbering.
+
+\subsection*{Point 1 (R3-1) --- Mathematical justification for the conditional posterior bound}
+\loc{Page 8, Line 304 through Page 9, Line 348; proofs on Page 10, Line 354
+through Page 11, Line 400}
+
+Your comment is correct, and we have restructured Proposition~1 rather than
+defend the earlier statement. The data-processing inequality controls the
+distributions (laws) of the posterior random variables, not the posterior
+evaluated at each fixed observation; at rare observations a small likelihood
+perturbation can be amplified. The proposition is now stated at two clearly
+separated levels:
+
+\begin{itemize}
+\item \textbf{(L2-i) Exact case.} When $\tau=0$ and the partner source is
+exogenous, the content posterior is preserved exactly;
+\item \textbf{(L2-ii)(a) Distribution-level bounds (unconditional).} The
+coupling gives the only unconditional statements:
+\[
+\mathrm{TV}(P_{C,Z},P_{C,T(Z)})\le\tau,\qquad
+\mathrm{TV}(p(Z),p(T(Z)))\le\tau;
+\]
+\item \textbf{(L2-ii)(b) Pointwise bound (conditional).} Retained only under
+an explicit inter-model likelihood-ratio condition
+$|\log p(\mathbf{b},r,\mathbf{d}\mid c)-\log
+p(\mathbf{b},r,\mathbf{d}_{aug}\mid c)|\le\alpha$, under which
+$\mathrm{TV}(p(C\mid Z),p(C\mid T(Z)))\le\tanh\alpha$.
+\end{itemize}
+
+The KL corollary is now conditional on the same assumption,
+$D_{\mathrm{KL}}\le\tanh(\alpha)/q_{\min}$, and the earlier
+$\tau\log(M/p_{\min})$ and $\tau/q_{\min}$ pointwise bounds are removed. The
+label-posterior drift $\delta$ is treated as a directly measured quantity
+rather than added to $\tau$. The full derivations are given in the revised
+proof (Pages~10--11). Theorems~1 and~2 are unaffected because they use the
+distribution-level total-variation quantity.
+
+\subsection*{Point 2 (R3-2) --- Consistent distinction of equivalence, non-significance, and superiority}
+\loc{Page 1, Lines 17--19; Pages 21--23, Lines 795--828; Page 36,
+Lines 1168--1200}
+
+\begin{sloppypar}
+We have applied one consistent terminology throughout the twelve affected
+passages. Non-significant contrasts are reported as statistically tied or on
+par; the term equivalence is used only for the TOST procedure and always with
+the equivalence margin stated; and no superiority is claimed. We also corrected
+the TOST implementation to the standard two-one-sided procedure using 90\%
+confidence intervals and recomputed every contrast. On PACS ($n=10$), at the
+one-point margin equivalence is confirmed only against RSC; at the two-point
+margin it additionally holds against SWAD, CORAL, and Fish; the CIFA--EFDM
+contrast is neither superior nor certified equivalent. These changes appear at
+the abstract (Page~1), introduction and contributions (Pages~2--3),
+experiments and captions (Pages~21--25), appendix (Pages~33--35), and
+conclusions (Page~36). The conditional nature of the unification is kept
+explicit throughout.
+\end{sloppypar}
+
+\subsection*{Point 3 (R3-3) --- Clean manuscript and consistency check}
+\loc{Whole manuscript; hyphenation at Page 36, Line 1168}
+
+A clean, fully accepted version (\texttt{CIFA\_Electronics\_clean.pdf},
+39 pages) is provided alongside the tracked version. We have verified that
+every cross-reference resolves with no dangling or duplicate labels; all 27
+bibliography entries are cited; equations, tables, and figures use automatic
+numbering with no hard-coded numbers; and the terminology and notation are
+consistent. The clean manuscript renders entirely in black with no revision
+marks. As part of this pass we also standardised the hyphenation (e.g.,
+``content--style''). Both the clean and tracked manuscripts compile with zero
+errors and zero overfull boxes, and their accepted content is identical.
+
+\vspace{0.6em}
+We thank you once again for the constructive and supportive review, and hope
+these revisions fully address the remaining points.
+
+\vspace{0.8em}
+Sincerely,\\
+Qingsong Cai (on behalf of all authors)\\
+\textit{Beijing Technology and Business University}\qquad
+\textit{caiqs@btbu.edu.cn}
+
+\end{document}

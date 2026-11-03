@@ -1,0 +1,318 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue}
+\definecolor{revblue}{RGB}{0,0,180}
+\definecolor{revred}{RGB}{180,0,0}
+\newcommand{\loc}[1]{\textbf{[\textcolor{revblue}{Tracked PDF: #1}]}}
+\setlist{nosep,leftmargin=1.4em}
+\setlength{\parskip}{0.55em}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\begin{center}
+{\Large\textbf{Response to Reviewers}}\\[0.6em]
+\textbf{Minor Revision Round}
+\end{center}
+
+\textbf{Manuscript:} ``Content-Conditioned Invariant Feature-Statistic
+Augmentation: Unifying Robustness and Weight Averaging for Domain
+Generalization'' (CIFA)\\
+\textbf{Journal:} \textit{Electronics} (MDPI)\qquad
+\textbf{Manuscript ID:} electronics-4654208\\
+\textbf{Date:} 3 November 2026
+
+\hrule
+\vspace{0.4em}
+
+Dear Editors and Reviewers,
+
+We thank all three reviewers for the careful and constructive second-round
+assessment. The remaining concerns are well focused: the readability of the
+figures (Reviewer~1), the interpretation and positioning of the work together
+with an editorial cleanup (Reviewer~2), and the mathematical justification,
+terminology, and internal consistency of the manuscript (Reviewer~3). We have
+addressed every point; no new training experiments were required.
+
+All revisions are marked in the tracked manuscript
+(\texttt{CIFA\_Electronics\_tracked.pdf}): additions in blue and deletions in
+red with a strikethrough. The manuscript uses continuous line numbering
+(right margin). Each response below is preceded by a location tag of the form
+\loc{Page X, Lines Y--Z} that points to the corresponding revision in the
+tracked PDF; a tag spanning two pages is written as
+\loc{Page X, Line Y through Page X+1, Line Z}.
+
+The revision comprises five substantive actions:
+\begin{itemize}
+\item \textbf{A1.} All seven figures redrawn as publication-ready vector
+graphics---legends moved outside the plotting area, distinguishable
+line styles/markers, enlarged fonts and insets, with no change to any data;
+\item \textbf{A2.} Proposition~1 restructured so that the unconditional
+distribution-level total-variation bounds are separated from the pointwise
+posterior bound, the latter now stated under an explicit inter-model
+likelihood-ratio condition ($\mathrm{TV}\le\tanh\alpha$);
+\item \textbf{A3.} The wording made consistent across the paper:
+non-significant differences are reported as statistically tied/on par, and
+``equivalence'' is used only for the two-one-sided (TOST) test with the
+equivalence margin stated; no superiority is claimed;
+\item \textbf{A4.} Editorial cleanup, including removal of a duplicated
+data-availability statement;
+\item \textbf{A5.} A full consistency check of equations, tables,
+cross-references, and terminology.
+\end{itemize}
+
+We reproduce each comment and respond point by point.
+
+%==================================================================
+\section*{Reviewer 1}
+
+\textbf{Comment.} \textit{The remaining concern is the readability of the
+figures. In several plots, portions of the curves are obscured by legends or
+overlapping graphical elements, making it difficult to distinguish individual
+traces and compare the results. The authors should carefully check all
+figures, reposition legends outside the plotting areas where necessary, and use
+clearly distinguishable line styles, colors, and markers. Enlarged panels or
+zoomed-in insets would also help where curves overlap closely. Please ensure
+that all curves, labels, and legends remain clearly readable at the final
+publication size. I recommend acceptance after minor revision to address these
+presentation issues.}
+
+\loc{Figures 1--7, Pages 7, 14, 25, 29, 30, 33, 34}
+
+\textbf{Response.} We agree, and we have redrawn \textbf{all seven figures}
+(not only the overlapping panels) as publication-ready vector PDFs, while
+leaving every data point unchanged. Each of the five requested actions has
+been applied:
+
+\begin{enumerate}[label=(\arabic*)]
+\item \textbf{All figures checked and redrawn.} Figures~1--7 were rebuilt
+from the identical source data with a uniform print specification;
+\item \textbf{Legends moved outside the plotting area.} In-axis legends were
+relocated to external margins (clearly visible in Figures~2, 6, and~7), so no
+curve is occluded;
+\item \textbf{Distinguishable styles and markers.} Marker size, line width,
+and cap size were increased and styles differentiated for clear separation at
+print size;
+\item \textbf{Enlarged panels and zoomed insets.} The closely overlapping
+coverage panel retains a zoomed inset (Figure~2b, zoom $3\times10$);
+\item \textbf{Readability at publication size.} Each figure was re-laid-out at
+its single- or double-column print dimensions and verified through a
+print-size preview.
+\end{enumerate}
+
+The figure locations are: Figure~1 (Page~7), Figure~2 (Page~14), Figure~3
+(Page~25), Figure~4 (Page~29), Figure~5 (Page~30), Figure~6 (Page~33), and
+Figure~7 (Page~34). We confirm that the underlying values are identical to the
+authoritative results and that no data were re-sampled.
+
+%==================================================================
+\section*{Reviewer 2}
+
+\textbf{General opening.} We thank Reviewer~2 for the candid and careful
+assessment, and for acknowledging that the presentation issues have been
+addressed, that the claims have been appropriately revised, and that the null
+and non-replicated results are reported transparently. The remaining concerns
+concern the interpretation and positioning of the work rather than additional
+experiments; we respond to each below.
+
+\subsection*{(1) On the necessity of the distinctive components}
+\loc{Page 33, Lines 1070--1074; Proposition 1, Pages 8--9, Lines 304--348}
+
+We agree that the content--style decomposition is not a source of measured
+accuracy: full-moment mixing is statistically indistinguishable from full
+CIFA (paired $+0.23\pm0.75$, $p=0.53$), and removing weight averaging is the
+dominant ablation ($2.42$ points). We would, however, distinguish accuracy
+contribution from theoretical role. The decomposition is not intended to
+improve accuracy; it is the structural condition that makes the
+content-preservation bound admissible. By mixing only the style deviation and
+fixing the content baseline, the construction guarantees
+$\mathbb{E}[\mathbf{d}\mid Y]=0$ and thereby licenses the total-variation
+bound of Proposition~1. Mixing the full moments does not satisfy this
+condition and therefore cannot carry the same guarantee, even when its
+accuracy is matched. The two constructions are tied in accuracy but not in the
+guarantees they provide; empirical equivalence in accuracy does not establish
+logical equivalence in the conditions each satisfies.
+
+\subsection*{(2) On the value of the unification}
+\loc{Pages 8--11, Lines 304--400}
+
+We explicitly position the contribution as integration rather than a new
+operator. The unification is not a concatenation of existing techniques: it
+places feature-moment augmentation, convex-hull minimax, and weight averaging
+under one causal-invariance principle and states the conditions under which
+each applies. This yields testable predictions---content--style separability
+as an enabling rather than sufficient condition, the behavior of the coverage
+gap, and the second-order flat-minima approximation. Together with the
+reproducible platform and the falsifiable boundary, this allows later methods
+to be compared on a common footing and avoids repeated investment in
+directions already shown to be ineffective. We do not claim a deployment
+advantage; the practical significance lies in the unified understanding and
+the well-characterized baseline.
+
+\subsection*{(3) On the strength of the assumptions and the coverage term}
+\loc{Page 8, Lines 304--322; Page 36, Lines 1171--1173}
+
+The assumptions are now stated, tested, and falsifiable premises rather than
+hidden conditions. Content--style separability is labeled an enabling premise,
+and the trajectory--augmentation alignment is presented as an empirically
+supported assumption rather than a theorem, with its limitations stated. The
+target access required to evaluate the coverage-gap term is an inherent
+property of target-free generalization, not a limitation unique to this work;
+we demonstrate the behavior of both terms in a controlled moment-space setting
+(Figure~2, Page~14) rather than presenting the term as computable without
+target data. A strong assumption is not an incorrect one; the value of the
+analysis is that its conditions are explicit and open to falsification.
+
+\subsection*{(4) On weakening claims versus adding evidence}
+\loc{Pages 21--23, Lines 795--828; Pages 8--11, Lines 304--400}
+
+When the evidence does not support a stronger claim, weakening that claim is
+the scientifically correct response; retaining an unsupported claim would be
+the error. The revision also adds positive evidence---an independent
+unified-code replication, a gate-pressure stress test, the alignment
+verification, and a corrected two-one-sided equivalence analysis. This
+evidence points to statistical equivalence and to boundary conditions rather
+than to superiority. What was weakened were the claims that did not hold; the
+claims that do hold---the unifying framework and the boundary
+characterization---are retained, strengthened, and made more precise and more
+readily falsifiable.
+
+\subsection*{(5) Overall scientific significance}
+\loc{Page 36, Lines 1168--1200}
+
+The manuscript does not claim a performance breakthrough. Its scientific
+significance is at the level of understanding: a unifying explanation, a
+systematic validity boundary, and a falsifiable, reproducible benchmark; the
+transparent reporting of null and non-replicated results is itself part of
+that contribution. The only actionable editorial item has been completed (see
+the editorial cleanup below). We respectfully ask that the work be judged on
+what it actually establishes rather than on the overstated claims of the
+original submission.
+
+\subsection*{(6) Editorial cleanup (duplicated or partially edited text)}
+\loc{Page 37, Lines 1209--1211}
+
+We carried out a full editorial review. The one concrete duplication was the
+data-availability statement, which appeared twice: a manually typeset
+``\textbf{Data availability.}'' paragraph and the MDPI template
+\texttt{\textbackslash dataavailability\{\}} command with identical content.
+The manual paragraph has been removed and the template command retained, so
+the statement now renders exactly once. The remaining items that can look like
+duplication in a text extraction (redefined revision macros, deliberate
+indentation and table alignment) were inspected individually and are not
+duplicated content.
+
+%==================================================================
+\section*{Reviewer 3}
+
+\textbf{General opening.} We sincerely thank Reviewer~3 for the detailed and
+constructive assessment and for recognising the substantial improvement in the
+mathematical formulation, experimental validation, statistical analysis, and
+interpretation. We address the three limited revisions below.
+
+\subsection*{R3-1. Mathematical justification for the conditional posterior bound}
+
+\textbf{Comment.} \textit{Clarify the mathematical justification for
+transferring the total-variation bound to the conditional content posteriors.
+The data-processing inequality alone does not generally establish a pointwise
+posterior bound under different conditioning observations. A more explicit
+justification or an appropriately weakened statement would strengthen the
+theoretical validity.}
+
+\loc{Page 8, Line 304 through Page 9, Line 348; proofs on Page 10, Line 354
+through Page 11, Line 400}
+
+\textbf{Response.} The comment is correct, and we have restructured
+Proposition~1 rather than defend the earlier statement. The data-processing
+inequality controls the distributions (laws) of the posterior random
+variables, not the posterior evaluated at each fixed observation; at rare
+observations a small likelihood perturbation can be amplified. The proposition
+is now stated at two clearly separated levels:
+
+\begin{itemize}
+\item \textbf{(L2-i) Exact case.} When $\tau=0$ and the partner source is
+exogenous, the content posterior is preserved exactly;
+\item \textbf{(L2-ii)(a) Distribution-level bounds (unconditional).} Without
+further assumptions, the coupling gives the only unconditional statements: the
+joint and observation-marginal laws
+\[
+\mathrm{TV}(P_{C,Z},P_{C,T(Z)})\le\tau,\qquad
+\mathrm{TV}(p(Z),p(T(Z)))\le\tau;
+\]
+\item \textbf{(L2-ii)(b) Pointwise bound (conditional).} The pointwise
+statement is retained only under an explicit inter-model likelihood-ratio
+condition $|\log p(\mathbf{b},r,\mathbf{d}\mid c)-\log
+p(\mathbf{b},r,\mathbf{d}_{aug}\mid c)|\le\alpha$, under which
+$\mathrm{TV}(p(C\mid Z),p(C\mid T(Z)))\le\tanh\alpha$.
+\end{itemize}
+
+The KL corollary is now conditional on the same assumption,
+$D_{\mathrm{KL}}\le\tanh(\alpha)/q_{\min}$, and the earlier
+$\tau\log(M/p_{\min})$ and $\tau/q_{\min}$ pointwise bounds are removed. The
+label-posterior drift $\delta$ is treated as a directly measured quantity
+rather than added to $\tau$. The full derivations, including the
+likelihood-ratio argument and the reverse-Pinsker inequality, are given in the
+revised proof (Pages 10--11). Theorems~1 and~2 are unaffected because they use
+the distribution-level total-variation quantity.
+
+\subsection*{R3-2. Consistent distinction of equivalence, non-significance, and superiority}
+
+\textbf{Comment.} \textit{The conclusions should consistently distinguish
+between demonstrated statistical equivalence, non-significant differences, and
+performance superiority. The conditional nature of the theoretical unification
+should also remain clear.}
+
+\loc{Page 1, Lines 17--19; Pages 21--23, Lines 795--828; Page 36,
+Lines 1168--1200}
+
+\textbf{Response.} We have applied one consistent terminology throughout the
+twelve affected passages. Non-significant contrasts are reported as
+\textbf{statistically tied} or \textbf{on par} (no significant difference);
+the term \textbf{equivalence} is used only for the TOST procedure and always
+with the equivalence margin stated; and no superiority is claimed. We also
+corrected the TOST implementation to the standard two-one-sided procedure
+using 90\% confidence intervals and recomputed every contrast. On PACS
+($n=10$), at the one-point margin equivalence is confirmed only against RSC;
+at the two-point margin it additionally holds against SWAD, CORAL, and Fish;
+the CIFA--EFDM contrast is neither superior nor certified equivalent. These
+wording changes appear at the abstract (Page~1), the introduction and
+contributions (Pages~2--3), the experiments and captions (Pages~21--25), the
+appendix (Pages 33--35), and the conclusions (Page~36). The conditional nature
+of the unification is kept explicit in every theoretical passage.
+
+\subsection*{R3-3. Clean manuscript and consistency of equations, tables, references, and terminology}
+
+\textbf{Comment.} \textit{Provide a clean manuscript incorporating the
+revisions and verify the consistency of equations, tables, cross-references,
+and terminology.}
+
+\loc{Whole manuscript; hyphenation at Page 36, Line 1168}
+
+\textbf{Response.} A clean, fully accepted version
+(\texttt{CIFA\_Electronics\_clean.pdf}, 39 pages) is provided alongside the
+tracked version. We have verified that: every cross-reference resolves with no
+dangling or duplicate labels; all 27 bibliography entries are cited; equations,
+tables, and figures use automatic numbering with no hard-coded numbers; and the
+terminology and notation are consistent. The clean manuscript renders entirely
+in black with no revision marks. As part of this pass we also standardised the
+hyphenation (e.g., ``content--style''). Both the clean and tracked manuscripts
+compile with zero errors and zero overfull boxes, and their accepted content is
+identical.
+
+\vspace{0.6em}
+We hope these revisions fully address the reviewers' concerns and we thank the
+editorial team and reviewers once again for their time and guidance.
+
+\vspace{0.8em}
+Sincerely,\\
+Qingsong Cai (on behalf of all authors)\\
+\textit{School of Computer and Artificial Intelligence, Beijing Technology and
+Business University}\\
+\textit{Email: caiqs@btbu.edu.cn}
+
+\end{document}
