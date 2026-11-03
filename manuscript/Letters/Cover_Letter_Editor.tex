@@ -1,0 +1,79 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue}
+\setlist{nosep,leftmargin=1.4em}
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\begin{center}
+{\Large\textbf{Cover Letter}}\\[0.5em]
+\textbf{Round 2 Revision}
+\end{center}
+
+\textbf{Manuscript:} ``Content-Conditioned Invariant Feature-Statistic
+Augmentation: Unifying Robustness and Weight Averaging for Domain
+Generalization'' (CIFA)\\
+\textbf{Journal:} \textit{Electronics} (MDPI)\qquad
+\textbf{Manuscript ID:} electronics-4654208\\
+\textbf{Date:} 3 November 2026
+
+\hrule
+\vspace{0.3em}
+
+Dear Editor,
+
+We thank you and the reviewers for the careful second-round assessment. We
+have addressed every comment point by point, and on the Round 2 revision
+submission page we have separately submitted a point-to-point cover letter
+to each of the three reviewers. No new training experiments were required;
+the revisions concern presentation, mathematical justification, wording and
+internal consistency.
+
+The substantive changes are summarised as follows:
+\begin{itemize}
+\item \textbf{Figures.} All seven figures were redrawn as publication-ready
+vector files, with legends moved outside the plotting areas and enlarged
+fonts, markers, line widths and cap sizes. Every data point and reported
+number is unchanged.
+\item \textbf{Theoretical clarification.} Proposition~1 is now stated in
+three layers: the exact case, unconditional distribution-level
+total-variation bounds, and a pointwise posterior bound that holds only
+under an explicit inter-model likelihood-ratio condition, under which the
+bound is $\mathrm{TV}\le\tanh(\alpha)$; the KL corollary is conditioned on
+the same assumption.
+\item \textbf{Statistical wording.} We consistently distinguish a
+non-significant difference (statistically tied / on par), equivalence
+certified by a TOST with a stated margin using the correct 90\% confidence
+interval, and superiority. We make no superiority claim, and the
+effectiveness boundary is characterised empirically rather than as a
+guaranteed improvement.
+\item \textbf{Editorial cleanup.} The duplicated data-availability
+statement was removed, followed by a full consistency check of equations,
+tables, cross-references and terminology.
+\end{itemize}
+
+We confirm that this manuscript is original, has not been published
+elsewhere, and is not under consideration by any other journal. All authors
+have approved the revised version and the author list is unchanged. The
+authors declare no conflict of interest. All data and the reproducible
+code are publicly available at
+\url{https://github.com/qsongcai/CIFA}.
+
+We hope the revised manuscript now meets the requirements and remain at
+your disposal should any further adjustments be needed.
+
+Sincerely,
+
+Qingsong Cai\\
+On behalf of all authors\\
+Beijing Technology and Business University\\
+\texttt{caiqs@btbu.edu.cn}
+
+\end{document}
