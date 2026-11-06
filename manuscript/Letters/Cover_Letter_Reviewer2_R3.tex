@@ -1,0 +1,67 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue}
+\definecolor{revblue}{RGB}{0,0,180}
+\newcommand{\loc}[1]{\textbf{[\textcolor{revblue}{Tracked PDF: #1}]}}
+\setlist{nosep,leftmargin=1.4em}
+\setlength{\parskip}{0.55em}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\begin{center}
+{\Large\textbf{Cover Letter to Reviewer 2}}\\[0.5em]
+\textbf{Round 3 Revision}
+\end{center}
+
+\textbf{Manuscript:} ``Content-Conditioned Invariant Feature-Statistic
+Augmentation: Unifying Robustness and Weight Averaging for Domain
+Generalization'' (CIFA)\\
+\textbf{Journal:} \textit{Electronics} (MDPI)\qquad
+\textbf{Manuscript ID:} electronics-4654208\\
+\textbf{Date:} 6 November 2026
+
+\hrule
+\vspace{0.4em}
+
+Dear Reviewer 2,
+
+We thank you for the careful third-round assessment. Since you raised no new
+point-by-point items and asked for publication after careful editorial
+revision, we have treated this round as an editorial review only; no
+scientific content, data, or conclusion has been changed.
+
+A full editorial review of both manuscripts found the text otherwise clean,
+with only two minor items, both now corrected and marked in the tracked PDF.
+
+\begin{itemize}
+\item The two ``Feature moment KL'' rows in Table~A3 wrote ``Wilcoxon .008''
+without a leading zero; they now read ``Wilcoxon 0.008'', matching the main
+text. \loc{Page 39, Table A3, Line 1298}
+
+\item The sentence on the shared codebase, seeds, splits, and SWAD schedule
+was repeated in the Table~3 caption and Appendix~A. The Table~3 caption keeps
+the full sentence, and the Appendix~A occurrence now reads ``All arms share
+the same unified codebase, seeds, splits, and SWAD schedule (Table~3).''
+\loc{Page 38, Lines 1284--1285}
+\end{itemize}
+
+Both manuscripts rebuild with no errors, overfull boxes, or undefined
+references, and accepting the tracked changes reproduces the clean version.
+
+\vspace{0.6em}
+We thank you again for your time and guidance.
+
+\vspace{0.8em}
+Sincerely,\\
+Qingsong Cai (on behalf of all authors)\\
+\textit{School of Computer and Artificial Intelligence, Beijing Technology and
+Business University}\\
+\textit{caiqs@btbu.edu.cn}
+
+\end{document}

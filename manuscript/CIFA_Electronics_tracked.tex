@@ -1205,7 +1205,7 @@ W. J. Maddox, T. Garipov, P. Izmailov, D. Vetrov, and A. G. Wilson, A simple bas
 \appendix
 \section{Per-Domain Detail of the Unified-Code PACS Comparison}
 
-Table~\ref{tab:classicperdom} reports, for the ten paired seeds of the unified codebase (Table~\ref{tab:classic}), the per-domain target accuracy (mean$\pm$std over seeds) for ERM, SWAD, CIFA, and the four classic baselines. All six learned arms share one codebase, seeds, deterministic splits, and the identical SWAD schedule. Differences across arms on each domain are within the run-to-run dispersion of the benchmark; no arm shows a consistent per-domain advantage after Bonferroni adjustment.
+Table~\ref{tab:classicperdom} reports, for the ten paired seeds of the unified codebase (Table~\ref{tab:classic}), the per-domain target accuracy (mean$\pm$std over seeds) for ERM, SWAD, CIFA, and the four classic baselines. \del{All six learned arms share one codebase, seeds, deterministic splits, and the identical SWAD schedule.}\add{All arms share the same unified codebase, seeds, splits, and SWAD schedule (Table~\ref{tab:classic}).} Differences across arms on each domain are within the run-to-run dispersion of the benchmark; no arm shows a consistent per-domain advantage after Bonferroni adjustment.
 
 \begin{table}[H]
 \centering
@@ -1274,8 +1274,8 @@ Prediction KL (nats) & 0.036 & 0.072 & 8/8, $p<0.001$ & --\\
 \midrule
 Feature NN ratio, layer 1 & 1.456 & 3.730 & 8/8, $p<10^{-6}$ & 0.39\\
 Feature NN ratio, layer 2 & 1.632 & 3.497 & 8/8, $p<10^{-6}$ & 0.47\\
-Feature moment KL, layer 1 & 0.196 & 3.132 & 8/8, Wilcoxon .008 & 0.29\\
-Feature moment KL, layer 2 & 0.405 & 1.411 & 8/8, Wilcoxon .008 & 0.33\\
+Feature moment KL, layer 1 & 0.196 & 3.132 & 8/8, Wilcoxon \del{.008}\add{0.008} & 0.29\\
+Feature moment KL, layer 2 & 0.405 & 1.411 & 8/8, Wilcoxon \del{.008}\add{0.008} & 0.33\\
 CKA, layer 1 & 0.786 & 0.779 & 7/8 & 1.01\\
 CKA, layer 2 & 0.763 & 0.742 & 7/8 & 1.03\\
 \bottomrule
